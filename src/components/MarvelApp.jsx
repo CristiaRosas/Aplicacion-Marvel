@@ -17,16 +17,20 @@ export const MarvelApp = () => {
             const resp = await fetch(`https://gateway.marvel.com:443/v1/public/characters?ts=${time_stamp}&apikey=${public_api_key}&hash=${hash}`)
             const {data} = await resp.json()
     
-            data.results.map((characters) =>{
-                setCharacters
-            })
+            setCharacters(data.results)
+            console.log(characters)
         }
     
         reqCharacters()
     }, [])
 
+    console.log(characters);
+
 
   return (
-    <div>MarvelApp</div>
+    <>
+
+    
+    </>
   )
 }
